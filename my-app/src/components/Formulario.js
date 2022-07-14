@@ -1,12 +1,16 @@
 import React, { useState } from "react"
 
-export default function Form() {
-    const [citas, setCitas]= useState([])
+export default function Form(form, setForm) {
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("eeee");
-        setCitas([inputField.nombreDueño])
+        setForm(e.target.nombreDueño)
         console.log(citas)
+    }
+
+    const handleChange =()=>{
+        
     }
 
     return (
@@ -17,7 +21,9 @@ export default function Form() {
         <input className="u-full-width"
             type="text"
             name="nombrePerro"
-            placeholder="Nombre del perro" required/>
+            placeholder="Nombre del perro"
+            value={form.nPerro}
+            onChange={handleChange} required/>
 
         <br />
         <label>Nombre dueño</label>
@@ -25,7 +31,7 @@ export default function Form() {
             type="text"
             name="nombreDueño"
             placeholder="Nombre del dueño" 
-            value={this.state.value}
+            value={form.nDueño}
             required/>
            
 
