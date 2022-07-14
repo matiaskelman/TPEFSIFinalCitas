@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-export default function Form(form, setForm) {
+export default function Form({form, setForm}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -9,7 +9,7 @@ export default function Form(form, setForm) {
         console.log(citas)
     }
 
-    const handleChange =()=>{
+    const handleChange =(e)=>{
         
     }
 
@@ -32,6 +32,7 @@ export default function Form(form, setForm) {
             name="nombreDueño"
             placeholder="Nombre del dueño" 
             value={form.nDueño}
+            onChange={handleChange}
             required/>
            
 
